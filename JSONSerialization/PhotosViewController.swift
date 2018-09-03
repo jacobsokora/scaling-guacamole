@@ -24,6 +24,8 @@ class PhotosViewController: UIViewController {
         photosCollectionView.delegate = self
         
         if let flowLayout = photosCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.minimumInteritemSpacing = 1
+            flowLayout.minimumLineSpacing = 1
             let horizontalSpacing = flowLayout.minimumInteritemSpacing
             let numberOfCellsPerRow = 4
             let cellWidth = (view.frame.width - CGFloat(max(0, numberOfCellsPerRow - 1)) * horizontalSpacing) / CGFloat(numberOfCellsPerRow)

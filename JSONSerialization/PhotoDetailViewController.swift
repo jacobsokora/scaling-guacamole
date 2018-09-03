@@ -12,7 +12,6 @@ import MapKit
 class PhotoDetailViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -30,8 +29,8 @@ class PhotoDetailViewController: UIViewController {
         if let photo = photo {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
-            formatter.timeStyle = .medium
-            titleLabel.text = photo.title
+            formatter.timeStyle = .short
+            title = photo.title
             descriptionLabel.text = photo.description
             dateLabel.text = formatter.string(from: photo.getDate())
             let annotation = PhotoAnnotation(photo: photo)
